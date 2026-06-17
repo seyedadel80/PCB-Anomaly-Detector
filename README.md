@@ -9,8 +9,8 @@ An end-to-end, AI-powered computer vision system designed to automate defect det
 Here is the interactive Gradio web app in action, demonstrating both normal and anomaly detection states with live visual bounding boxes and session history tracking:
 
 <p align="center">
-  <img src="ui_normal.jpg" width="48%" alt="Normal PCB Detection" />
-  <img src="ui_anomaly.jpg" width="48%" alt="Anomaly PCB Detection" />
+  <img src="ui_normal.png" width="48%" alt="Normal PCB Detection" />
+  <img src="ui_anomaly.png" width="48%" alt="Anomaly PCB Detection" />
 </p>
 
 ---
@@ -30,8 +30,8 @@ The model was trained on Google Colab using a T4 GPU. Below are snapshots of the
 
 <p align="center">
   <img src="dataset_sample.png" width="31%" alt="Dataset Sample 1" />
-  <img src="model_result.jpg" width="31%" alt="Dataset Sample 2" />
-  <img src="train_loss.jpg" width="34%" alt="Training Loss and Metrics" />
+  <img src="model_result.png" width="31%" alt="Dataset Sample 2" />
+  <img src="train_loss.png" width="34%" alt="Training Loss and Metrics" />
 </p>
 
 ---
