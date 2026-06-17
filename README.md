@@ -60,7 +60,15 @@ To train the segmentation network, each raw PCB image is mapped against a binary
   <img src="dataset_sample.png" width="75%" alt="Dataset Ground Truth Mask Pair" />
 </p>
 
-### 2. Model Prediction & Defect Localization
+### 2. Training Convergence & Optimization Metrics
+
+The network was trained using a combined loss function tailored for unbalanced segmentation data (where defects occupy a tiny fraction of the board). As analyzed in the metric curves below (`train_loss.png`), the training and validation loss converged stably over the epochs, ensuring high dice-coefficients and strict generalization without overfitting.
+
+<p align="center">
+  <img src="train_loss.png" width="80%" alt="Training and Validation Loss Optimization Curves" />
+</p>
+
+### 3. Model Prediction & Defect Localization
 
 After training, the network generates dense pixel-wise probability maps that are converted into binary masks and localized defect regions. The image below (`model_result.png`) demonstrates the model's ability to accurately identify and isolate PCB anomalies while preserving the surrounding normal structures.
 
@@ -68,13 +76,6 @@ After training, the network generates dense pixel-wise probability maps that are
   <img src="model_result.png" width="75%" alt="Model Prediction and Defect Localization" />
 </p>
 
-### 3. Training Convergence & Optimization Metrics
-
-The network was trained using a combined loss function tailored for unbalanced segmentation data (where defects occupy a tiny fraction of the board). As analyzed in the metric curves below (`train_loss.png`), the training and validation loss converged stably over the epochs, ensuring high dice-coefficients and strict generalization without overfitting.
-
-<p align="center">
-  <img src="train_loss.png" width="80%" alt="Training and Validation Loss Optimization Curves" />
-</p>
 
 ---
 
