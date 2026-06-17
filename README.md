@@ -15,7 +15,7 @@ The production-ready application is powered by **Gradio**, providing an intuitiv
 When a flawless PCB is uploaded, the system processes the image through the network and ensures that no pixel probability exceeds the set threshold. It outputs a clean status with a low global anomaly score, minimizing false positives.
 
 <p align="center">
-  <img src="ui_normal.png" width="85%" alt="Normal PCB Detection State" />
+  <img src="ui_normal.png" width="95%" alt="Normal PCB Detection State" />
 </p>
 
 ### 2. Anomaly Detection & Visual Fault Isolation
@@ -23,7 +23,7 @@ When a flawless PCB is uploaded, the system processes the image through the netw
 When a defective board is inspected, the model generates a dense pixel-wise probability map. The post-processing pipeline detects active contours and draws automated bounding boxes directly around the faulty regions, providing immediate visual feedback.
 
 <p align="center">
-  <img src="ui_anomaly.png" width="85%" alt="Anomaly Detected State with Bounding Boxes" />
+  <img src="ui_anomaly.png" width="95%" alt="Anomaly Detected State with Bounding Boxes" />
 </p>
 
 ---
@@ -60,12 +60,12 @@ To train the segmentation network, each raw PCB image is mapped against a binary
   <img src="dataset_sample.png" width="75%" alt="Dataset Ground Truth Mask Pair" />
 </p>
 
-### 2. Augmentation Pipeline & Preprocessing (`Albumentations`)
+### 2. Model Prediction & Defect Localization
 
-Due to the critical nature of industrial anomalies, the model utilizes the `Albumentations` library to apply real-time pixel and spatial augmentations. As shown in (`model_result.png`), input samples undergo geometric resizing, normalization, and advanced augmentations to ensure the model remains invariant to rotation, translation, and minor camera noise.
+After training, the network generates dense pixel-wise probability maps that are converted into binary masks and localized defect regions. The image below (`model_result.png`) demonstrates the model's ability to accurately identify and isolate PCB anomalies while preserving the surrounding normal structures.
 
 <p align="center">
-  <img src="model_result.png" width="75%" alt="Data Preprocessing and Augmentation Pipeline" />
+  <img src="model_result.png" width="75%" alt="Model Prediction and Defect Localization" />
 </p>
 
 ### 3. Training Convergence & Optimization Metrics
