@@ -1,0 +1,6 @@
+# Ignore model weights
+best_pcb_model.pth
+
+# Ignore Python cache
+__pycache__/
+*.pyc
